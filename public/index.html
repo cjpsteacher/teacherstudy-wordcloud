@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>即時文字雲</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="workspace" aria-label="即時文字雲">
+        <div class="panel input-panel">
+          <div>
+            <p class="eyebrow">Firebase Firestore</p>
+            <h1>即時文字雲</h1>
+          </div>
+
+          <form id="wordForm" class="word-form">
+            <label for="wordInput">輸入一個詞</label>
+            <div class="input-row">
+              <input id="wordInput" name="word" type="text" maxlength="24" autocomplete="off" placeholder="例如：合作、AI、閱讀">
+              <button type="submit">送出</button>
+            </div>
+            <p id="status" class="status" role="status">正在連接資料庫...</p>
+          </form>
+
+          <div class="stats" aria-label="文字雲統計">
+            <div>
+              <span id="totalCount">0</span>
+              <small>總投稿</small>
+            </div>
+            <div>
+              <span id="uniqueCount">0</span>
+              <small>不同詞</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="cloud-stage">
+          <svg id="cloud" role="img" aria-label="即時文字雲"></svg>
+          <div id="emptyState" class="empty-state">等第一個詞出現</div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-cloud@1/build/d3.layout.cloud.js"></script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
