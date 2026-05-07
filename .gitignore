@@ -2,3 +2,26 @@
 .firebaserc.local
 node_modules/
 *.log
+
+# System files
+desktop.ini
+Thumbs.db
+.DS_Store
+*.tmp
+~$*
+
+# Secrets and local credentials
+.env
+.env.*
+*.key
+credentials.*
+secrets.*
+
+# AI agent local state
+.claude/
+.codex/
+
+# Build output
+dist/
+build/
+.cache/
